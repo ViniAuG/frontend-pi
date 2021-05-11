@@ -38,7 +38,6 @@ export default {
 nav {
 	height: 60px;
 	width: 100%;
-	box-shadow: 2px 2px 2px #CCC;
 	ul {
 		display: flex;
 		height: 100%;
