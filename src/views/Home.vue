@@ -73,7 +73,7 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1230px) {
   .block {
     text-align: center;
     padding-left: 20px;

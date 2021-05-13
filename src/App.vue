@@ -22,23 +22,23 @@ export default {
     navLinks: [
       {
         text: 'Home',
-		path: '/home',
-		icon: 'ion-ios-bonfire'
+        path: '/home',
+        icon: 'ion-ios-bonfire'
       },
       {
         text: 'Dashboard',
-		path: '/dashboard',
-		icon: 'ion-ios-briefcase'
+        path: '/dashboard',
+        icon: 'ion-ios-briefcase'
       },
       {
         text: 'Contact',
-		path: '/contact',
-		icon: 'ion-ios-megaphone'
+        path: '/contact',
+        icon: 'ion-ios-megaphone'
       },
       {
         text: 'About',
-		path: '/about',
-		icon: 'ion-ios-business'
+        path: '/about',
+        icon: 'ion-ios-business'
       }
     ]
   })
