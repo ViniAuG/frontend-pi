@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "https://smart-b-api.ue.r.appspot.com",
   "scripts": {
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -12,6 +13,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-responsive-components": "^0.2.3",
     "vue-router": "^3.0.3"
