@@ -16,9 +16,7 @@
     "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-responsive-components": "^0.2.3",
-    "vue-router": "^3.0.3",
-    "nodemon": "^2.0.4"
-    
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
@@ -33,10 +31,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
     "mem": "^5.1.1",
+    "nodemon": "^2.0.7",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "nodemon": "^2.0.4"
+    "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
