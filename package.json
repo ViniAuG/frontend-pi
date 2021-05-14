@@ -4,15 +4,16 @@
   "private": true,
   "proxy": "https://smart-b-api.ue.r.appspot.com",
   "scripts": {
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "start": "vue-cli-service serve"
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^2.6.5",
+    "express": "^4.17.1",
     "vue": "^2.6.10",
     "vue-responsive-components": "^0.2.3",
     "vue-router": "^3.0.3"
@@ -30,10 +31,10 @@
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
     "mem": "^5.1.1",
+    "nodemon": "^2.0.7",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "start": "vue-cli-service serve"
+    "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
