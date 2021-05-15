@@ -22,10 +22,18 @@
         <h4 class="list-component-title" id="total-inaptas">{{ TotalNOK }}</h4>
         <p>Inaptas para consumo</p>
       </li>
+        <h1 class="list-title">Gráfico | Bananas</h1>
+        <div class="graphic">
+      <apexchart
+        width="500"
+        type="line"
+        :options="options"
+        :series="series"
+      ></apexchart>
+    </div>
     </ul>
   </body>
 </template>
-
 <script>
 import axios from 'axios'
 
@@ -35,7 +43,44 @@ export default {
     return {
       TotalOK: 0,
       TotalInProgress: 0,
-      TotalNOK: 0
+      TotalNOK: 0,
+      options: {
+        chart: {
+          id: 'vuechart-example'
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        legend: {
+          show: false
+        },
+
+        grid: {
+          borderColor: '#111',
+          strokeDashArray: 0
+        },
+
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        }
+      },
+      series: [
+        {
+          name: 'Maduras',
+          data: [2, 3, 4, 6, 9, 6, 8, 1],
+          color: '#eca406'
+        },
+        {
+          name: 'Não Maduras',
+          data: [1, 2, 5, 2, 4, 5, 7, 9],
+          color: 'rgb(102, 163, 22)'
+        },
+        {
+          name: 'Inaptas',
+          data: [1, 4, 5, 5, 4, 6, 3, 2],
+          color: '#752424'
+        }
+      ]
     }
   },
   methods: {
@@ -47,29 +92,29 @@ export default {
 
     getData () {
       axios
-      .get(
-        'https://smart-b-api.ue.r.appspot.com/api/v1/product/summary?userID=3d729ae8-ad34-46ab-842b-e01e0785137c'
-      )
-      .then(response => {
-        let OKElement = response.data.filter(
-          element => element.condition === 'OK'
+        .get(
+          'https://smart-b-api.ue.r.appspot.com/api/v1/product/summary?userID=3d729ae8-ad34-46ab-842b-e01e0785137c'
         )
+        .then((response) => {
+          let OKElement = response.data.filter(
+            (element) => element.condition === 'OK'
+          )
 
-        let NOKElement = response.data.filter(
-          element => element.condition === 'NOT_OK'
-        )
+          let NOKElement = response.data.filter(
+            (element) => element.condition === 'NOT_OK'
+          )
 
-        let INProgressElement = response.data.filter(
-          element => element.condition === 'IN_PROGRESS'
-        )
+          let INProgressElement = response.data.filter(
+            (element) => element.condition === 'IN_PROGRESS'
+          )
 
-        this.TotalOK = OKElement.length === 1 ? OKElement[0].total : 0
+          this.TotalOK = OKElement.length === 1 ? OKElement[0].total : 0
 
-        this.TotalInProgress =
-          INProgressElement.length === 1 ? INProgressElement[0].total : 0
+          this.TotalInProgress =
+            INProgressElement.length === 1 ? INProgressElement[0].total : 0
 
-        this.TotalNOK = NOKElement.length === 1 ? NOKElement[0].total : 0
-      })
+          this.TotalNOK = NOKElement.length === 1 ? NOKElement[0].total : 0
+        })
     }
   },
   created () {
@@ -84,6 +129,11 @@ export default {
 <style scoped>
 ul > li {
   display: inline-block;
+}
+.graphic {
+  position: absolute;
+  left: 40%;
+  background-color: whitesmoke;
 }
 
 .list-component-title {
